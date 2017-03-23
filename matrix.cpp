@@ -18,6 +18,14 @@ int get_dimention(int pos)
     return vec[pos];
 }
 
+void clear_Screen(int rows){
+  int i;
+
+  for (i = 0; i < rows; i++) {
+    cout<<endl;
+  }
+
+}
 
 int main(int argc, char* argv[])
 {
