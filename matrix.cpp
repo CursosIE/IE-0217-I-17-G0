@@ -20,10 +20,10 @@ int get_dimention(int pos)
 
 void clear_Screen(int rows){
   int i;
-
   for (i = 0; i < rows; i++) {
     cout<<endl;
   }
+  
 
 }
 
