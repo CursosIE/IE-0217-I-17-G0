@@ -10,7 +10,7 @@ void print_display(char characters[])
     cout << characters[rand()%sizeof(characters)] << endl;
 }
 
-int get_dimention(int pos,)
+int get_dimention(int pos)
 {
     struct winsize w;
     ioctl(0, TIOCGWINSZ, &w);
@@ -29,7 +29,7 @@ void clear_Screen(int rows){
 int main(int argc, char* argv[])
 {
     int rows_param = atoi(argv[1]);
-    //int colums_param = stoi(argv[2]);
+    int colums_param = atoi(argv[2]);
     int rows = get_dimention(0);
     int colums = get_dimention(1);
     clear_Screen(rows);
