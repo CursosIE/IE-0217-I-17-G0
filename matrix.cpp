@@ -10,13 +10,14 @@ void print_display(char characters[])
     cout << characters[rand()%sizeof(characters)] << endl;
 }
 
-int get_dim(int pos)
+int get_dimention(int pos)
 {
     struct winsize w;
     ioctl(0, TIOCGWINSZ, &w);
     int vec[2]= {w.ws_row,w.ws_col};
     return vec[pos];
 }
+
 
 int main(int argc, char* argv[])
 {
