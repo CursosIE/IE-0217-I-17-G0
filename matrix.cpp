@@ -24,7 +24,6 @@ void clear_Screen(int rows){
     cout<<endl;
   }
   
-
 }
 
 int main(int argc, char* argv[])
