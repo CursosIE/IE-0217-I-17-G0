@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <sys/ioctl.h>
 #include <unistd.h>
+#include <unistd.h>
 using namespace std;
 
 //global variables
@@ -12,9 +13,9 @@ int columns_param;
 int rows;
 int columns;
 
-void wait(unsigned int time)
+void wait(int time)
 {
-    sleep(time);
+   usleep(time);
 }
 
 int get_dimention(int pos)
@@ -32,7 +33,6 @@ void clear_Screen(){
   }
 
 }
-
 
 int main(int argc, char* argv[])
 {
@@ -77,7 +77,7 @@ int main(int argc, char* argv[])
 
     for(int i = 0; i < rows; i++)
     {
-        wait(1);
+      wait(100000);
         for (int j = 0; j < columns; ++j)
         {
             if (j == (columns - 1))
@@ -90,6 +90,8 @@ int main(int argc, char* argv[])
             }
         }
     }
+
+
 
     return 0;
 }
