@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
     columns_param = atoi(argv[2]);
     rows = get_dimention(0);
     columns = get_dimention(1);
-    clear_Screen();
+    //clear_Screen();
     int matrix_randomize[rows][columns];
     char matrix[rows][columns];
 
@@ -77,7 +77,7 @@ int main(int argc, char* argv[])
 
     for(int i = 0; i < rows; i++)
     {
-        wait(2);
+        wait(1);
         for (int j = 0; j < columns; ++j)
         {
             if (j == (columns - 1))
