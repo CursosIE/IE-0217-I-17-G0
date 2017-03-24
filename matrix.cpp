@@ -3,6 +3,7 @@
 #include <ctime>
 #include <cstdlib>
 #include <sys/ioctl.h>
+#include <unistd.h>
 using namespace std;
 
 //global variables
@@ -10,6 +11,11 @@ int rows_param;
 int columns_param;
 int rows;
 int columns;
+
+void wait(unsigned int time)
+{
+    sleep(time);
+}
 
 int get_dimention(int pos)
 {
@@ -71,6 +77,7 @@ int main(int argc, char* argv[])
 
     for(int i = 0; i < rows; i++)
     {
+        wait(1);
         for (int j = 0; j < columns; ++j)
         {
             if (j == (columns - 1))
