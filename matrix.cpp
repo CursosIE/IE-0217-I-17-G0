@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cmath>
+//#include <cmath>
 #include <ctime>
 #include <cstdlib>
 #include <sys/ioctl.h>
