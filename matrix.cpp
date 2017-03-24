@@ -72,6 +72,7 @@ int main(int argc, char* argv[])
             }
         }
     }
+
     for(i = 0; i < rows; i++)
     {
         for (j = 0; j < columns; ++j)
@@ -86,14 +87,17 @@ int main(int argc, char* argv[])
             }
         }
     }
-    for(i = 0; i < rows; i++)
+    for (int k = 0; k < 6; ++k)
     {
-        for (j = 0; j < columns; ++j)
+        for(i = 0; i < rows; i++)
         {
-            cout << matrix[i][j];
-            if (j == (columns - 1))
+            for (j = 0; j < columns; ++j)
             {
-                cout << "\n";
+                cout << matrix[i][j];
+                if (j == (columns - 1))
+                {
+                    cout << "\n";
+                }
             }
         }
     }
