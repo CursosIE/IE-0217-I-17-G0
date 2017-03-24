@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cmath>
+//#include <cmath>
 #include <ctime>
 #include <cstdlib>
 #include <sys/ioctl.h>
@@ -77,7 +77,7 @@ int main(int argc, char* argv[])
 
     for(int i = 0; i < rows; i++)
     {
-        wait(1);
+        wait(2);
         for (int j = 0; j < columns; ++j)
         {
             if (j == (columns - 1))
