@@ -35,8 +35,6 @@ int main(int argc, char* argv[])
     int rows = get_dimention(0);
     int columns = get_dimention(1);
     clear_Screen(rows);
-    char characters[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,@;.:-_{}[]^`+*|°¬!#$%&/()='?¿¡";
-    std::cout << "INFO LA LONGITUD DE characters ES:" << sizeof(characters) << "\n";
     char space[] = " ";
     int i, j;
     int matrix_randomize[rows][columns];
