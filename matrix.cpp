@@ -5,10 +5,11 @@
 #include <sys/ioctl.h>
 using namespace std;
 
-void print_display(char characters[])
-{
-    cout << characters[rand()%sizeof(characters)] << endl;
-}
+//global variables
+int rows_param;
+int columns_param;
+int rows;
+int columns;
 
 int get_dimention(int pos)
 {
@@ -18,7 +19,7 @@ int get_dimention(int pos)
     return vec[pos];
 }
 
-void clear_Screen(int rows){
+void clear_Screen(){
   int i;
   for (i = 0; i < rows; i++) {
     cout<<endl;
@@ -27,20 +28,16 @@ void clear_Screen(int rows){
 }
 
 
-
 int main(int argc, char* argv[])
 {
-    int rows_param = atoi(argv[1]);
-    int columns_param = atoi(argv[2]);
-    int rows = get_dimention(0);
-    int columns = get_dimention(1);
-    clear_Screen(rows);
-    char space[] = " ";
-    int i, j;
+    srand(time(NULL));
+    rows_param = atoi(argv[1]);
+    columns_param = atoi(argv[2]);
+    rows = get_dimention(0);
+    columns = get_dimention(1);
+    clear_Screen();
     int matrix_randomize[rows][columns];
     char matrix[rows][columns];
-
-
 
 
     //TODO estos for's se encargan de llenar matrices de unos y cesos, luego si tiene un 1 le asigna un caracter, si tiene un
@@ -49,31 +46,17 @@ int main(int argc, char* argv[])
     //primero que me pareció no ser un método bonito para llenar la matrix_randomize y que quede bonita a la hora de imprimir
     //luego que los caracteres ascii por algun maldito motivo estan fallando
 
-    for(i = 0; i < rows; i++)
+    for(int i = 0; i < rows; i++)
     {
-        for (j = 0; j < columns; ++j)
+        for (int j = 0; j < columns; ++j)
         {
             matrix_randomize[i][j] = rand()%2;
         }
     }
-    for(i = 0; i < rows; i++)
-    {
-        for (j = 0; j < columns; ++j)
-        {
-            if (j == (columns - 1))
-            {
-                cout << "\n";
-            }
-            else
-            {
-                cout << matrix_randomize[i][j];
-            }
-        }
-    }
 
-    for(i = 0; i < rows; i++)
+    for(int i = 0; i < rows; i++)
     {
-        for (j = 0; j < columns; ++j)
+        for (int j = 0; j < columns; ++j)
         {
             if (matrix_randomize[i][j] == 1)
             {
@@ -85,20 +68,21 @@ int main(int argc, char* argv[])
             }
         }
     }
-    for (int k = 0; k < 6; ++k)
+
+    for(int i = 0; i < rows; i++)
     {
-        for(i = 0; i < rows; i++)
+        for (int j = 0; j < columns; ++j)
         {
-            for (j = 0; j < columns; ++j)
+            if (j == (columns - 1))
+            {
+                cout << "\n";
+            }
+            else
             {
                 cout << matrix[i][j];
-                if (j == (columns - 1))
-                {
-                    cout << "\n";
-                }
             }
         }
     }
-    //print_display(characters);
+
     return 0;
 }
