@@ -44,6 +44,7 @@ int main(int argc, char* argv[])
     int vector_randomize[columns];
     char vector[columns];
     int lagrima = 12;
+    int velocidad = 1000;
 
     for (int i = 0; i < columns; ++i)
     {
@@ -64,7 +65,7 @@ int main(int argc, char* argv[])
         }
         for (int j = 0; j < columns; ++j)
         {
-            wait(10000);
+            wait(velocidad);
             cout <<  vector[j];
             if (j == (columns - 1))
             {
