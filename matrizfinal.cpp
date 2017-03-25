@@ -19,11 +19,17 @@ void clear_Screen();
 
 int main(int argc, char* argv[])
 {
+    if (argc < 2)
+    {
+        rows = get_dimention(0);
+        columns = get_dimention(1);
+    }
+    else
+    {
+        rows = atoi(argv[1]);
+        columns = atoi(argv[2]);
+    }
     srand(time(NULL));
-    rows_param = atoi(argv[1]);
-    columns_param = atoi(argv[2]);
-    rows = get_dimention(0);
-    columns = get_dimention(1);
     clear_Screen();
     printScreen();
     return 0;
