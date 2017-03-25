@@ -5,8 +5,6 @@
 #include <unistd.h>
 using namespace std;
 
-
-
 //global variables
 int rows_param;
 int columns_param;
@@ -47,6 +45,7 @@ int main(int argc, char* argv[])
     rows = get_dimention(0);
     columns = get_dimention(1);
     //clear_Screen();
+
     int vector_randomize[columns];
     char vector[columns];
     int lagrima = 12;
@@ -72,10 +71,8 @@ int main(int argc, char* argv[])
 
         for (int j = 0; j < columns; ++j)
         {
-            // wait(100000);
             wait(velocidad);
-
-            cout<<vector[j];
+            cout <<  vector[j];
             if (j == (columns - 1))
             {
                 cout << "\n";
