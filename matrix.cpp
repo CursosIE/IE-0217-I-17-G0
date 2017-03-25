@@ -1,5 +1,4 @@
 #include <iostream>
-//#include <cmath>
 #include <ctime>
 #include <cstdlib>
 #include <sys/ioctl.h>
@@ -7,7 +6,6 @@
 #include <unistd.h>
 using namespace std;
 
-//global variables
 int rows_param;
 int columns_param;
 int rows;
@@ -36,12 +34,19 @@ void clear_Screen(){
 
 int main(int argc, char* argv[])
 {
-    srand(time(NULL));
-    rows_param = atoi(argv[1]);
-    columns_param = atoi(argv[2]);
-    rows = get_dimention(0);
-    columns = get_dimention(1);
-    //clear_Screen();
+    // srand(time(NULL));
+    int rows;
+    int columns;
+
+    if (argv[1] != NULL) {
+      rows = atoi(argv[1]);
+      columns = atoi(argv[2]);
+    }
+    else{
+      rows= get_dimention(0);
+      columns= get_dimention(1);
+    }
+    clear_Screen();
     int matrix_randomize[rows][columns];
     char matrix[rows][columns];
 
@@ -74,22 +79,26 @@ int main(int argc, char* argv[])
             }
         }
     }
+    for (int i = 0; i < 50; i++) {
 
-    for(int i = 0; i < rows; i++)
-    {
-      wait(100000);
-        for (int j = 0; j < columns; ++j)
-        {
-            if (j == (columns - 1))
-            {
-                cout << "\n";
-            }
-            else
-            {
-                cout << matrix[i][j];
-            }
-        }
+      for(int i = 0; i < rows; i++)
+      {
+        wait(80000);
+          for (int j = 0; j < columns; ++j)
+          {
+              if (j == (columns - 1))
+              {
+                  cout << "\n";
+              }
+              else
+              {
+                  cout << matrix[i][j];
+                    cout << " ";
+              }
+          }
+      }
     }
+
 
 
 
