@@ -39,11 +39,11 @@ int main(int argc, char* argv[])
     columns_param = atoi(argv[2]);
     rows = get_dimention(0);
     columns = get_dimention(1);
-    clear_Screen();
+    // clear_Screen();
 
     int vector_randomize[columns];
     char vector[columns];
-    int lagrima = 23;
+    int lagrima = 30;
     for (int n = 0; n < 10; n++) {
 
     for (int i = 0; i < columns; ++i)
@@ -67,13 +67,14 @@ int main(int argc, char* argv[])
         {
             wait(450);
               cout << "\e[92m" << vector[j];
+
             if (j == (columns - 1))
             {
                 cout << "\n";
             }
-        }
-    }
 
+        }
+        }
         }
 
     return 0;
