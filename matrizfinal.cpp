@@ -39,12 +39,12 @@ int main(int argc, char* argv[])
     columns_param = atoi(argv[2]);
     rows = get_dimention(0);
     columns = get_dimention(1);
-    clear_Screen();
+    //clear_Screen();
 
     int vector_randomize[columns];
     char vector[columns];
-    int lagrima = rand() % 19 + 6;
-    for (int n = 0; n < 10; n++) {
+    int lagrima = rand() % 10 + 6;
+    for (int n = 0; n < 20; n++) {
         lagrima = rand() % 19 + 6;
         for (int i = 0; i < columns; ++i)
         {
