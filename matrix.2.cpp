@@ -5,8 +5,6 @@
 #include <unistd.h>
 using namespace std;
 
-
-
 //global variables
 int rows_param;
 int columns_param;
