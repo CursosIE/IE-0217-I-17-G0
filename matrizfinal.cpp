@@ -29,7 +29,7 @@ void clear_Screen(){
   for (i = 0; i < rows; i++) {
     cout<<endl;
   }
-  cout << "\r"
+  cout << "\r";
 }
 
 int main(int argc, char* argv[])
