@@ -8,8 +8,8 @@ using namespace std;
 //global variables
 int rows_param;
 int columns_param;
-int rows;
-int columns;
+int rows = 0;
+int columns = 0;
 
 void wait(int time)
 {
@@ -24,13 +24,18 @@ int get_dimention(int pos)
     return vec[pos];
 }
 
-void clear_Screen(){
+void clear_Screen()
+{
   int i;
-  for (i = 0; i < rows; i++) {
+  for (i = 0; i < rows; i++)
+  {
     cout<<endl;
   }
 
 }
+
+
+
 
 int main(int argc, char* argv[])
 {
@@ -63,6 +68,7 @@ int main(int argc, char* argv[])
                 vector[j] = 32;
             }
         }
+
         for (int j = 0; j < columns; ++j)
         {
             wait(velocidad);
@@ -73,7 +79,6 @@ int main(int argc, char* argv[])
             }
         }
     }
-
 
     return 0;
 }
