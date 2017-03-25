@@ -72,7 +72,10 @@ int main(int argc, char* argv[])
         for (int j = 0; j < columns; ++j)
         {
             wait(velocidad);
-            cout <<  vector[j];
+            // cout << vector[j];
+            cout << "\e[92m" << vector[j];
+
+
             if (j == (columns - 1))
             {
                 cout << "\n";
