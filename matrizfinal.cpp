@@ -12,7 +12,7 @@ int rows;
 int columns;
 
 //functions used
-void wait(int time);
+void wait(unsigned int time);
 int get_dimention(int pos);
 void printScreen();
 void clear_Screen();
@@ -74,7 +74,7 @@ void printScreen() {
     }
 }
 
-void wait(int time)
+void wait(unsigned int time)
 {
    usleep(time);
 }
