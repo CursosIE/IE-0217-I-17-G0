@@ -48,7 +48,7 @@ int main(int argc, char* argv[])
 
     int vector_randomize[columns];
     char vector[columns];
-    int lagrima = 12;
+    int lagrima = 20;
     int velocidad = 1000;
 
     for (int i = 0; i < columns; ++i)
