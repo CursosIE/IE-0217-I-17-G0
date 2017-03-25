@@ -34,7 +34,18 @@ void clear_Screen()
 
 }
 
+int set_vector(int columns)
+{
+    srand(time(NULL));
+    int vector_randomize[columns];
 
+    for (int i = 0; i < columns; ++i)
+    {
+        vector_randomize[i] = rand()%46;
+    }
+
+    return *vector_randomize;
+}
 
 
 int main(int argc, char* argv[])
@@ -47,19 +58,16 @@ int main(int argc, char* argv[])
     //clear_Screen();
 
     int vector_randomize[columns];
+    *vector_randomize = set_vector(columns);
     char vector[columns];
     int lagrima = 12;
     int velocidad = 1000;
 
-    for (int i = 0; i < columns; ++i)
-    {
-        vector_randomize[i] = rand()%16;
-    }
     for (int k = 0; k < lagrima; ++k)
     {
         for (int j = 0; j < columns; ++j)
         {
-            if (vector_randomize[j] < 1)
+            if (vector_randomize[j] == 1)
             {
                 vector[j] = rand() % 94 + 33;
             }
