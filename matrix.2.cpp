@@ -8,8 +8,8 @@ using namespace std;
 //global variables
 int rows_param;
 int columns_param;
-int rows;
-int columns;
+int rows = 0;
+int columns = 0;
 
 void wait(int time)
 {
@@ -24,13 +24,18 @@ int get_dimention(int pos)
     return vec[pos];
 }
 
-void clear_Screen(){
+void clear_Screen()
+{
   int i;
-  for (i = 0; i < rows; i++) {
+  for (i = 0; i < rows; i++)
+  {
     cout<<endl;
   }
 
 }
+
+
+
 
 int main(int argc, char* argv[])
 {
@@ -40,6 +45,7 @@ int main(int argc, char* argv[])
     rows = get_dimention(0);
     columns = get_dimention(1);
     //clear_Screen();
+
     int vector_randomize[columns];
     char vector[columns];
     int lagrima = 12;
@@ -62,19 +68,17 @@ int main(int argc, char* argv[])
                 vector[j] = 32;
             }
         }
+
         for (int j = 0; j < columns; ++j)
         {
-            // wait(100000);
             wait(velocidad);
-
-            cout<<vector[j];
+            cout <<  vector[j];
             if (j == (columns - 1))
             {
                 cout << "\n";
             }
         }
     }
-
 
     return 0;
 }

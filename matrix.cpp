@@ -3,13 +3,15 @@
 #include <cstdlib>
 #include <sys/ioctl.h>
 #include <unistd.h>
-#include <unistd.h>
 using namespace std;
 
+
+
+//global variables
 int rows_param;
 int columns_param;
-int rows;
-int columns;
+int rows = 0;
+int columns = 0;
 
 void wait(int time)
 {
@@ -24,79 +26,61 @@ int get_dimention(int pos)
     return vec[pos];
 }
 
-void clear_Screen(){
+void clear_Screen()
+{
   int i;
-  for (i = 0; i < rows; i++) {
+  for (i = 0; i < rows; i++)
+  {
     cout<<endl;
   }
 
 }
 
+
+
+
 int main(int argc, char* argv[])
 {
-    // srand(time(NULL));
-    int rows;
-    int columns;
+    srand(time(NULL));
+    rows_param = atoi(argv[1]);
+    columns_param = atoi(argv[2]);
+    rows = get_dimention(0);
+    columns = get_dimention(1);
+    //clear_Screen();
+    int vector_randomize[columns];
+    char vector[columns];
+    int lagrima = 12;
+    int velocidad = 1000;
 
-    if (argv[1] != NULL) {
-      rows = atoi(argv[1]);
-      columns = atoi(argv[2]);
+    for (int i = 0; i < columns; ++i)
+    {
+        vector_randomize[i] = rand()%16;
     }
-    else{
-      rows= get_dimention(0);
-      columns= get_dimention(1);
-    }
-    clear_Screen();
-    int matrix_randomize[rows][columns];
-    char matrix[rows][columns];
-
-
-    //TODO estos for's se encargan de llenar matrices de unos y cesos, luego si tiene un 1 le asigna un caracter, si tiene un
-    //cero le asigna un espacio
-    // el TODO está puesto por dos motivos:
-    //primero que me pareció no ser un método bonito para llenar la matrix_randomize y que quede bonita a la hora de imprimir
-    //luego que los caracteres ascii por algun maldito motivo estan fallando
-
-    for(int i = 0; i < rows; i++)
+    for (int k = 0; k < lagrima; ++k)
     {
         for (int j = 0; j < columns; ++j)
         {
-            matrix_randomize[i][j] = rand()%2;
-        }
-    }
-
-    for(int i = 0; i < rows; i++)
-    {
-        for (int j = 0; j < columns; ++j)
-        {
-            if (matrix_randomize[i][j] == 1)
+            if (vector_randomize[j] < 1)
             {
-                matrix[i][j] = (rand() % 94 + 33);
+                vector[j] = rand() % 94 + 33;
             }
             else
             {
-                matrix[i][j] = 32;
+                vector[j] = 32;
             }
         }
-    }
-    for (int i = 0; i < 50; i++) {
 
-      for(int i = 0; i < rows; i++)
-      {
-        wait(80000);
-          for (int j = 0; j < columns; ++j)
-          {
-              if (j == (columns - 1))
-              {
-                  cout << "\n";
-              }
-              else
-              {
-                  cout << matrix[i][j];
-                    cout << " ";
-              }
-          }
-      }
+        for (int j = 0; j < columns; ++j)
+        {
+            // wait(100000);
+            wait(velocidad);
+
+            cout<<vector[j];
+            if (j == (columns - 1))
+            {
+                cout << "\n";
+            }
+        }
     }
 
     return 0;
