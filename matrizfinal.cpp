@@ -15,7 +15,7 @@ int columns;
 void wait(unsigned int time);
 int get_dimention(int pos);
 void printScreen();
-void clear_Screen();
+void clearScreen();
 
 int main(int argc, char* argv[])
 {
@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
         columns = atoi(argv[2]);
     }
     srand(time(NULL));
-    clear_Screen();
+    clearScreen();
     printScreen();
     return 0;
 }
@@ -87,7 +87,7 @@ int get_dimention(int pos)
     return vec[pos];
 }
 
-void clear_Screen()
+void clearScreen()
 {
     system("clear");
 }
