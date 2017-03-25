@@ -27,9 +27,9 @@ int get_dimention(int pos)
 void clear_Screen(){
   int i;
   for (i = 0; i < rows; i++) {
-    cout<<endl;
+    cout<<"\r\n\r";
   }
-
+  cout << "\r";
 }
 
 int main(int argc, char* argv[])
@@ -43,37 +43,40 @@ int main(int argc, char* argv[])
 
     int vector_randomize[columns];
     char vector[columns];
-    int lagrima = 30;
+
+    int lagrima = rand() % 19 + 6;
+
     for (int n = 0; n < 10; n++) {
-
-    for (int i = 0; i < columns; ++i)
-    {
-        vector_randomize[i] = rand()%16;
-    }
-    for (int k = 0; k < lagrima; ++k)
-    {
-        for (int j = 0; j < columns; ++j)
+        lagrima = rand() % 19 + 6;
+        for (int i = 0; i < columns; ++i)
         {
-            if (vector_randomize[j] < 5)
-            {
-                vector[j] = rand() % 94 + 33;
-            }
-            else
-            {
-                vector[j] = 32;
-            }
+            vector_randomize[i] = rand()%46;
         }
-        for (int j = 0; j < columns; ++j)
+        for (int k = 0; k < lagrima; ++k)
         {
-            wait(450);
-              cout << "\e[92m" << vector[j];
 
-            if (j == (columns - 1))
+            for (int j = 0; j < columns; ++j)
             {
-                cout << "\n";
+                if (vector_randomize[j] < (rand()%6+5))
+                {
+                    vector[j] = rand() % 94 + 33;
+                }
+                else
+                {
+                    vector[j] = 32;
+                }
+            }
+            for (int j = 0; j < columns; ++j)
+            {
+                wait(450);
+                cout << "\e[92m" << vector[j];
+                if (j == (columns - 1))
+                {
+                    cout << "\n";
+                }
             }
 
-        }
+
         }
         }
 
