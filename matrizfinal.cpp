@@ -6,8 +6,6 @@
 using namespace std;
 
 //global variables
-int rows_param;
-int columns_param;
 int rows;
 int columns;
 
@@ -16,6 +14,7 @@ void wait(unsigned int time);
 int get_dimention(int pos);
 void printScreen();
 void clearScreen();
+void moveScreen();
 
 int main(int argc, char* argv[])
 {
