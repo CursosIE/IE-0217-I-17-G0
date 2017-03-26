@@ -31,6 +31,8 @@ int main(int argc, char* argv[])
     srand(time(NULL));
     clearScreen();
     printScreen();
+    wait(900);
+    moveScreen();
     return 0;
 }
 
@@ -72,6 +74,20 @@ void printScreen() {
                 }
             }
         }
+    }
+}
+
+void moveScreen() {
+    wait(1200);
+    cout << "\r\r\r\r";
+    for (int i = 0; i < columns*20; ++i)
+    {
+        cout << "\r";
+        for (int j = 0; j < columns; ++j)
+        {
+            cout << " ";
+        }
+        wait(1200);
     }
 }
 
