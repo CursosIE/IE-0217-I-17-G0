@@ -51,6 +51,8 @@ void printScreen() {
         {
             for (int j = 0; j < columns; ++j)
             {
+                rows = get_dimention(0);
+                columns = get_dimention(1);
                 if (vector_randomize[j] < (rand()%6+5))
                 {
                     vector[j] = rand() % 94 + 33;
