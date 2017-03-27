@@ -25,14 +25,21 @@ int validation = 0;
 *En caso de no introducir las dimensiones de la consola al ejecutar el programa, esta función varía los parámetros
 globales rows y columns con la cantidad total de filas y columnas de la consola, respectivamente.
 */
+void printScreen();
 
 void get_dimention()
 {
+    int this_row = rows;
+    int this_columns = columns;
     validation = 0;
     struct winsize w;
     ioctl(0, TIOCGWINSZ, &w);
     rows = w.ws_row;
     columns = w.ws_col;
+    if (rows != this_row || columns != columns)
+    {
+        printScreen();
+    }
 }
 
 void set_dimention(int a, int b) {
@@ -47,6 +54,10 @@ void wait(unsigned int time)
 }
 
 void printScreen() {
+    if (validation == 0)
+    {
+        get_dimention();
+    }
     int vector_randomize[columns];
     char vector[columns];
     int lagrima;
