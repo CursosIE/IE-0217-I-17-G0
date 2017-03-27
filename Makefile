@@ -1,23 +1,15 @@
-VAR0 = 0
-VAR1 = 1
-#...
-#...
-#...
-CPP = g++
-SRC = a.cpp
-LIB = -fopenmp
-INC = 
+COMPILER = g++
+SRC = matrizfinal.cpp
+FLAGS = -W -Wall -o
+BIN = matriz
+LIB =
+INC =
 
 all:	build	clean	run
-	echo 'all'
-	echo $(VAR0)
-build:
-	echo 'build'
-	#	g++ a.cpp -fopenmp
-	$(CPP) $(SRC) $(LIB) 
-clean:
-	echo 'clean'
-run:
-	echo 'run'
-	./a.out
 
+build:
+	#	g++ a.cpp -fopenmp
+	$(COMPILER) $(SRC) $(FLAGS) $(BIN)
+clean:
+run:
+	./$(BIN)
