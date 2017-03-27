@@ -5,9 +5,25 @@
 #include <unistd.h>
 using namespace std;
 
+/** En forma general, el presente código se encarga de imprimir en pantalla vectores con caracteres al
+azar dando un efecto visual de caída como lluvia de dichos caracteres por la consola */
+
+
+/**
+*@param $rows - Parámetro que indica la cantidad de filas de la consola, sean calculadas por el programa o
+introducidas por consola.
+*@param $columns - Parámetro que indica la cantidad de columnas de la consola, sean calculadas por el programa
+o introducidas por consola.
+ */
 //global variables
 int rows;
 int columns;
+
+/**
+*@brief Función que se encarga de calcular las dimensiones (filas, columnas) de la consola.
+*En caso de no introducir las dimensiones de la consola al ejecutar el programa, esta función varía los parámetros
+globales rows y columns con la cantidad total de filas y columnas de la consola, respectivamente.
+*/
 
 void get_dimention()
 {
