@@ -68,7 +68,6 @@ void printScreen() {
 }
 
 void moveScreen() {
-    wait(1200);
     cout << "\r\r\r\r";
     for (int i = 0; i < columns*20; ++i)
     {
@@ -77,7 +76,6 @@ void moveScreen() {
         {
             cout << " ";
         }
-        wait(1200);
     }
 }
 
