@@ -1,6 +1,7 @@
 #include "matrix.hpp"
 int main(int argc, char* argv[])
 {
+    clearScreen();
     if (argc < 2)
     {
         get_dimention();
@@ -12,7 +13,6 @@ int main(int argc, char* argv[])
         set_dimention(rows, columns);
     }
     srand(time(NULL));
-    clearScreen();
     printScreen();
     wait(900);
     moveScreen();

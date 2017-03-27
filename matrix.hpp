@@ -16,9 +16,9 @@ introducidas por consola.
 o introducidas por consola.
  */
 //global variables
-int rows = 0;
-int columns = 0;
-int validation = 0;
+int rows;
+int columns;
+int validation;
 
 /**
 *@brief Función que se encarga de calcular las dimensiones (filas, columnas) de la consola.
@@ -36,7 +36,7 @@ void get_dimention()
     ioctl(0, TIOCGWINSZ, &w);
     rows = w.ws_row;
     columns = w.ws_col;
-    if (rows != this_row || columns != columns)
+    if (rows != this_row || columns != this_columns)
     {
         printScreen();
     }
