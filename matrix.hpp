@@ -16,8 +16,9 @@ introducidas por consola.
 o introducidas por consola.
  */
 //global variables
-int rows;
-int columns;
+int rows = 0;
+int columns = 0;
+int validation = 0;
 
 /**
 *@brief Función que se encarga de calcular las dimensiones (filas, columnas) de la consola.
@@ -27,6 +28,7 @@ globales rows y columns con la cantidad total de filas y columnas de la consola,
 
 void get_dimention()
 {
+    validation = 0;
     struct winsize w;
     ioctl(0, TIOCGWINSZ, &w);
     rows = w.ws_row;
@@ -34,6 +36,7 @@ void get_dimention()
 }
 
 void set_dimention(int a, int b) {
+    validation = 1;
     rows = a;
     columns = b;
 }
@@ -44,7 +47,6 @@ void wait(unsigned int time)
 }
 
 void printScreen() {
-
     int vector_randomize[columns];
     char vector[columns];
     int lagrima;
@@ -60,7 +62,10 @@ void printScreen() {
         {
             for (int j = 0; j < columns; ++j)
             {
-                get_dimention();
+                if (validation == 0)
+                {
+                    get_dimention();
+                }
                 if (vector_randomize[j] < (rand()%6+5))
                 {
                     vector[j] = rand() % 94 + 33;
