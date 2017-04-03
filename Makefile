@@ -5,11 +5,12 @@ BIN = matriz
 LIB =
 INC =
 
-all:	build	clean	run
+all:	build	run clean
 
 build:
 	#	g++ a.cpp -fopenmp
 	$(COMPILER) $(SRC) $(FLAGS) $(BIN)
-clean:
 run:
 	./$(BIN)
+clean:
+	rm $(BIN)
